@@ -2,22 +2,22 @@ This started as a personal project to automate converting a folder of image file
 any type of media easily.
 
 DESCRIPTION:
-  Convert media files between different formats using ffmpeg and ImageMagick.
-  Automatically selects the appropriate tool based on file types and checks
-  if images are animated before converting to GIF or video formats.
+  <br/>Convert media files between different formats using ffmpeg and ImageMagick.
+  <br/>Automatically selects the appropriate tool based on file types and checks
+  <br/>if images are animated before converting to GIF or video formats.
 
 USAGE:
-  py_convert.py <input_type> <output_type> <target> [--output DIR]
+  <br/>py_convert.py <input_type> <output_type> <target> [--output DIR]
 
 ARGUMENTS:
-  input_type    Input file type/extension (e.g., jpg, png, webm, mp4, gif, webp)
-  output_type   Output file type/extension (e.g., png, gif, mp4, jpg)
-  target        Input file or directory containing files to convert
-  --output, -o  (Optional) Output directory (default: same as input directory)
+  <br/>input_type    Input file type/extension (e.g., jpg, png, webm, mp4, gif, webp)
+  <br/>output_type   Output file type/extension (e.g., png, gif, mp4, jpg)
+  <br/>target        Input file or directory containing files to convert
+  <br/>--output, -o  (Optional) Output directory (default: same as input directory)
 
 SUPPORTED FORMATS:
-  Video:  mp4, webm, avi, mkv, mov, flv, wmv, m4v, 3gp, mpg, mpeg
-  Image:  jpg, jpeg, png, gif, webp, bmp, tiff, tif, ico, svg, heic, heif
+  <br/>Video:  mp4, webm, avi, mkv, mov, flv, wmv, m4v, 3gp, mpg, mpeg
+  <br/>Image:  jpg, jpeg, png, gif, webp, bmp, tiff, tif, ico, svg, heic, heif
 
 EXAMPLES:
   **Convert single image file**
@@ -39,11 +39,11 @@ EXAMPLES:
   <br/>py_convert.py mp4 gif video.mp4
 
 NOTES:
-  • Static (non-animated) images will be skipped when converting to GIF or video
-  • The script automatically uses ffmpeg for video formats and ImageMagick for images
-  • Both ffmpeg and ImageMagick must be installed and available in your PATH
-  • File extensions can be specified with or without the leading dot (e.g., .jpg or jpg)
+  <br/>• Static (non-animated) images will be skipped when converting to GIF or video
+  <br/>• The script automatically uses ffmpeg for video formats and ImageMagick for images
+  <br/>• Both ffmpeg and ImageMagick must be installed and available in your PATH
+  <br/>• File extensions can be specified with or without the leading dot (e.g., .jpg or jpg)
 
 TOOL REQUIREMENTS:
-  • ffmpeg: Required for video conversions and video-to-GIF conversions
-  • ImageMagick: Required for image conversions (install and ensure 'magick' command is available)
+  <br/>• ffmpeg: Required for video conversions and video-to-GIF conversions
+  <br/>• ImageMagick: Required for image conversions (install and ensure 'magick' command is available)
