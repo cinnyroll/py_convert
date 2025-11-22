@@ -21,22 +21,22 @@ SUPPORTED FORMATS:
 
 EXAMPLES:
   **Convert single image file**
-  py_convert.py jpg png image.jpg
+  <br/>py_convert.py jpg png image.jpg
 
   **Convert video file**
-  py_convert.py webm mp4 video.webm
+  <br/>py_convert.py webm mp4 video.webm
 
   **Convert all WebP files in a directory to GIF (only animated ones)**
-  py_convert.py webp gif "C:\\Images"
+  <br/>py_convert.py webp gif "C:\\Images"
 
   **Convert PNG files to JPG with custom output directory**
-  py_convert.py png jpg "C:\\Images" --output "C:\\Output"
+  <br/>py_convert.py png jpg "C:\\Images" --output "C:\\Output"
 
   **Convert animated GIF to WebP**
-  py_convert.py gif webp animation.gif
+  <br/>py_convert.py gif webp animation.gif
 
   **Convert video to GIF**
-  py_convert.py mp4 gif video.mp4
+  <br/>py_convert.py mp4 gif video.mp4
 
 NOTES:
   • Static (non-animated) images will be skipped when converting to GIF or video
