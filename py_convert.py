@@ -206,7 +206,7 @@ def convert_with_imagemagick(input_path: Path, output_path: Path, input_ext: str
             # Standard conversion
             cmd = ['magick', str(input_path), str(output_path)]
         
-        subprocess.run(cmd, check=True, capture_output=True)
+        subprocess.run(cmd, check=True, capture_output=True)          
         return output_path.exists()
     except (subprocess.CalledProcessError, FileNotFoundError) as e:
         print(f"Error: ImageMagick conversion failed: {e}")
@@ -250,6 +250,8 @@ def convert_file(input_path: Path, input_ext: str, output_ext: str, output_dir: 
     
     if success:
         print(f"Success: Created {output_path.name}")
+        if os.environ.get('PY_CONVERT_OVERWRITE') == '1':
+            os.remove(input_path)
     else:
         print(f"Error: Conversion failed for {input_path.name}")
     
@@ -315,9 +317,23 @@ TOOL REQUIREMENTS:
     parser.add_argument('--help', '-h',
                         help='Show this help message and exit',
                         action='help')
+    parser.add_argument('--overwrite', '-w',
+                        help='Overwrite existing files',
+                        action='store_true')
     
     args = parser.parse_args()
     
+    # Check whether to overwrite existing files
+    if not args.overwrite:
+        print("Note: Existing files will not be overwritten unless --overwrite is specified.")
+    else:
+        print("Note: Existing files will be overwritten.")
+        os.environ['PY_CONVERT_OVERWRITE'] = '1'
+
+    # Debug: Print parsed arguments
+    # print(f"DEBUG: Parsed arguments: {args}")
+    print(f"DEBUG: Overwrite existing files: {os.environ.get('PY_CONVERT_OVERWRITE')}")
+
     # Normalize extensions
     input_ext = normalize_extension(args.input_type)
     output_ext = normalize_extension(args.output_type)
