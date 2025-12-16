@@ -285,7 +285,7 @@ def main():
     parser = argparse.ArgumentParser(
         description='Convert media files between different formats using ffmpeg and ImageMagick.',
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        add_help=True,
+        #add_help=True,
         epilog="""
 Examples:
   %(prog)s jpg png image.jpg
@@ -294,6 +294,7 @@ Examples:
   %(prog)s png jpg "C:\\Images" --output "C:\\Output"
 
 NOTES:
+  • The 'target' argument accepts either a single file or a directory
   • Static (non-animated) images will be skipped when converting to GIF or video
   • The script automatically uses ffmpeg for video formats and ImageMagick for images
   • Both ffmpeg and ImageMagick must be installed and available in your PATH
