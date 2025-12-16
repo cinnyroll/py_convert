@@ -12,7 +12,6 @@ import subprocess
 from pathlib import Path
 from typing import List, Tuple, Optional
 
-
 # Format definitions
 VIDEO_FORMATS = {'mp4', 'webm', 'avi', 'mkv', 'mov', 'flv', 'wmv', 'm4v', '3gp', 'mpg', 'mpeg'}
 IMAGE_FORMATS = {'jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'tiff', 'tif', 'ico', 'svg', 'heic', 'heif'}
