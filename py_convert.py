@@ -285,7 +285,7 @@ def main():
     parser = argparse.ArgumentParser(
         description='Convert media files between different formats using ffmpeg and ImageMagick.',
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        add_help=False,
+        add_help=True,
         epilog="""
 Examples:
   %(prog)s jpg png image.jpg
@@ -305,6 +305,12 @@ TOOL REQUIREMENTS:
         """
     )
     
+    #parser.add_argument('--help', '-h',
+    #                    help='Show this help message and exit',
+    #                    action='help')
+    parser.add_argument('--overwrite', '-w',
+                        help='Overwrite existing files',
+                        action='store_true')
     parser.add_argument('input_type', 
                        help='Input file type/extension (e.g., jpg, png, webm, mp4)')
     parser.add_argument('output_type',
@@ -314,12 +320,7 @@ TOOL REQUIREMENTS:
     parser.add_argument('--output', '-o',
                        help='Output directory (default: same as input)',
                        default=None)
-    parser.add_argument('--help', '-h',
-                        help='Show this help message and exit',
-                        action='help')
-    parser.add_argument('--overwrite', '-w',
-                        help='Overwrite existing files',
-                        action='store_true')
+    
     
     args = parser.parse_args()
     
